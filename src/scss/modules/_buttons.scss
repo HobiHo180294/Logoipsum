@@ -1,0 +1,60 @@
+/* each loop */
+
+// Functions
+@import "../modules/functions";
+
+// Styles for buttons
+$btnContentList: "primary" #ff7143 #fff 60px #fff #ff7143 #ff7143,
+  "home" #5454d4 #fff 60px #fff #5454d4 #5454d4,
+  "card" #fff #5454d4 108px #9f3919 #fff;
+
+@each $btnName, $bgColor, $textColor, $hrPadding, $hoverbg, $hoverText,
+  $hoverBorder in $btnContentList
+{
+  .#{$btnName} {
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px $hrPadding;
+    min-height: 60px;
+    line-height: (22, 17);
+    text-align: center;
+    margin: 5px 0;
+    background: $bgColor;
+    color: $textColor;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      background-color: $hoverbg;
+      color: $hoverText;
+
+      @if $btnName == "card" {
+        border: none;
+      } @else {
+        border: 1px solid $hoverBorder;
+      }
+    }
+  }
+}
+
+// $btnCardList: ;
+
+// @each $btnStyle, $btnBg, $btnText, $btnhrPadding in $btnCardList {
+//   .#{$btnStyle} {
+//     border-radius: 10px;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 5px $btnhrPadding;
+//     min-height: 60px;
+//     line-height: (22, 17);
+//     text-align: center;
+//     margin: 19px 0;
+//     background: $btnBg;
+//     color: $btnText;
+//     transition: all 0.5s ease 0s;
+//   }
+// }

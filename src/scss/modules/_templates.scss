@@ -1,0 +1,21 @@
+// Templates
+%basicTextParameters {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: $contentTextColor;
+}
+
+%container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 25px;
+  box-sizing: content-box;
+}
+
+%wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
