@@ -1,0 +1,44 @@
+// Modules
+@use "../scss/modules/reset" as reset;
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Mulish&family=Roboto&display=swap");
+
+// Palette
+@import "../scss/modules/palette";
+
+// Templates
+%basicTextParameters {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: $contentTextColor;
+}
+
+/* Presets and common styles*/
+body {
+  @extend %basicTextParameters;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styles start */
+.header {
+}
+/* Header styles end */
+
+/* Page styles start */
+.page {
+  flex: 1 1 auto;
+}
+/* Page styles end */
+
+/* Footer styles start */
+.footer {
+}
+/* Footer styles end */
