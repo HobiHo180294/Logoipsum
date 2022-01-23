@@ -30,6 +30,10 @@ body {
   @extend %container;
 }
 
+._ibg {
+  @extend %ibg;
+}
+
 /* Header styles start */
 .header {
   padding-top: 25px;
@@ -46,6 +50,8 @@ body {
   }
 
   &__logo-pic {
+    transition: all 0.5s ease 0s;
+
     &:hover {
       transform: scale(1.2);
     }
@@ -94,7 +100,7 @@ body {
       bottom: 0;
       height: 2px;
       left: 50%;
-      background-color: $hoveLinkLine;
+      background-color: $blue;
       transform: translateX(-50%);
       opacity: 0;
       transition: all 0.5s ease 0s;
@@ -108,12 +114,22 @@ body {
 /* Page styles start */
 .page {
   flex: 1 1 auto;
+
+  &__home {
+    padding: 95px 0 50px 0;
+  }
+
+  &__partners {
+    padding: 50px 0 50px 0;
+  }
+
+  &__blog {
+    padding: 100px 0 69px 0;
+  }
 }
 
 /* Home styles start */
 .home {
-  padding: 95px 0 50px 0;
-
   &__container {
     max-width: 1070px;
     margin: 0 auto;
@@ -157,19 +173,8 @@ body {
   }
 
   &__img {
-    position: relative;
-
     padding-bottom: 56.1%;
     padding-left: 53.14%;
-  }
-
-  &__img-pic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -209,8 +214,6 @@ body {
 
 /* Partners styles start */
 .partners {
-  padding: 50px 0 50px 0;
-
   &__items {
     display: flex;
     align-items: center;
@@ -235,6 +238,84 @@ body {
   }
 }
 /* Partners styles end */
+
+/* Blog styles start */
+.blog {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "stats__img stats__desc"
+      "data__desc data__img";
+
+    align-items: center;
+    row-gap: 83px;
+  }
+
+  &__img {
+    position: relative;
+    padding-bottom: 88.6%;
+    padding-left: 65.049%;
+
+    &:nth-child(1) {
+      grid-area: stats__img;
+      justify-self: start;
+    }
+
+    &:nth-child(3) {
+      grid-area: data__img;
+      justify-self: center;
+    }
+  }
+
+  &__description {
+    &:nth-child(2) {
+      grid-area: stats__desc;
+    }
+
+    &:nth-child(4) {
+      grid-area: data__desc;
+    }
+  }
+}
+
+.description {
+  &__body {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+    color: $dark;
+    font-size: 50px;
+    line-height: percentlh(57, 50);
+    letter-spacing: -1.56316px;
+  }
+
+  &__text {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: percentlh(30, 20);
+    letter-spacing: -0.625263px;
+  }
+
+  &__more {
+    line-height: percentlh(22, 17);
+    letter-spacing: -0.531474px;
+    color: $blue;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+/* Blog styles end */
 
 /* Page styles end */
 
