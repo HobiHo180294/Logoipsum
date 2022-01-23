@@ -69,27 +69,31 @@ body {
     letter-spacing: -0.468947px;
     position: relative;
     padding: 10px 0;
-    transition: all 0.3s ease 0s;
-
-    &::after {
-      content: "";
-    }
+    transition: all 0.5s ease 0s;
 
     &:hover {
-      color: $hoverMenuLink;
+      color: $dark;
 
       &::after {
         content: "";
-        transition: all 1s ease 0s;
-        position: absolute;
-        display: inline-block;
-        width: 41px;
-        bottom: 0;
-        height: 2px;
-        left: 50%;
-        background-color: $hoveLinkLine;
-        transform: translateX(-50%);
+        opacity: 1;
       }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 41px;
+      bottom: 0;
+      height: 2px;
+      left: 50%;
+      background-color: $hoveLinkLine;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: all 0.5s ease 0s;
+
+      // transition: all 1s ease 0s;
     }
   }
 }
@@ -100,6 +104,103 @@ body {
 .page {
   flex: 1 1 auto;
 }
+
+/* Home styles start */
+.home {
+  padding: 95px 0 100px 0;
+
+  &__container {
+    max-width: 1070px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding: 0 25px;
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    margin-right: -78px;
+  }
+
+  &__content {
+    flex: 0 1 460px;
+  }
+
+  &__title {
+    font-size: 80px;
+    line-height: percentlh(77, 80);
+    color: $dark;
+    letter-spacing: -2.50105px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: percentlh(30, 20);
+    letter-spacing: -0.625263px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    padding-bottom: 56.1%;
+    padding-left: 53.14%;
+  }
+
+  &__img-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__link {
+    margin: 25px 0;
+    flex: 0 1 220px;
+  }
+
+  &__icon {
+    display: inline-block;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1px solid $gray;
+    margin-left: 40px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      border: 1px solid $dark;
+    }
+  }
+
+  &__icon-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+/* Home styles end */
 /* Page styles end */
 
 /* Footer styles start */
