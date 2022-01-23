@@ -44,6 +44,12 @@ body {
   &__button {
     flex: 0 1 220px;
   }
+
+  &__logo-pic {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .menu {
@@ -97,7 +103,6 @@ body {
     }
   }
 }
-
 /* Header styles end */
 
 /* Page styles start */
@@ -107,7 +112,7 @@ body {
 
 /* Home styles start */
 .home {
-  padding: 95px 0 100px 0;
+  padding: 95px 0 50px 0;
 
   &__container {
     max-width: 1070px;
@@ -201,6 +206,36 @@ body {
   }
 }
 /* Home styles end */
+
+/* Partners styles start */
+.partners {
+  padding: 50px 0 50px 0;
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding: 8px 15px;
+    flex: 0 1 20%;
+    text-align: center;
+    min-width: 140px;
+  }
+
+  &__item-logo {
+    max-width: 100%;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+/* Partners styles end */
+
 /* Page styles end */
 
 /* Footer styles start */
