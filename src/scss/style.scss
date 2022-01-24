@@ -130,6 +130,10 @@ body {
   &__features {
     padding: 75px 0 75px 0;
   }
+
+  &__pricing {
+    padding: 75px 0 175px 0;
+  }
 }
 
 /* Home styles start */
@@ -333,9 +337,6 @@ body {
     padding: 0 37px;
     flex: 0 1 33.333%;
   }
-
-  &__item {
-  }
 }
 .item-features {
   display: flex;
@@ -355,9 +356,6 @@ body {
     height: 64px;
   }
 
-  &__icon-pic {
-  }
-
   &__title {
     color: $dark;
     font-size: 24px;
@@ -375,9 +373,166 @@ body {
 }
 /* Features section styles end */
 
-/* Page styles end */
+/* Pricing section styles start */
+.pricing {
+  &__container {
+    max-width: 1111px;
+    padding: 0 6px;
+    box-sizing: content-box;
+    margin: 0 auto;
+  }
 
-/* Footer styles start */
-.footer {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 82px;
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: percentlh(70, 60);
+    letter-spacing: -1.87579px;
+    color: $dark;
+  }
+
+  &__slider {
+    flex: 0 1 344px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 26px;
+    margin: 0 -23px;
+  }
+
+  &__column {
+    padding: 0 23px;
+    flex: 0 1 33.333%;
+  }
 }
-/* Footer styles end */
+
+.slider {
+  min-height: 65px;
+  border: 5px solid $standardSliderColor;
+  background-color: $standardSliderColor;
+  border-radius: 10px;
+  text-align: center;
+  color: $dark;
+  font-size: 16px;
+  line-height: percentlh(21, 16);
+  letter-spacing: -0.500211px;
+
+  &__yearly {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    border-radius: 10px 0px 0px 10px;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      color: $white;
+      background-color: $activeSliderColor;
+    }
+  }
+
+  &__monthly {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    border-radius: 0px 10px 10px 0px;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      color: $white;
+      background-color: $activeSliderColor;
+    }
+  }
+}
+
+.item-pricing {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: $cardBgColor;
+  border-radius: 10px;
+  padding: 34px 10px 23px;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+
+  &__class {
+    font-weight: 40;
+    font-size: 18px;
+    line-height: percentlh(28, 18);
+    letter-spacing: -0.562737px;
+
+    &:not(:last-child) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__cost {
+    color: $cardClassColor;
+    font-size: 28px;
+    line-height: percentlh(56, 60);
+
+    letter-spacing: -1.03448px;
+
+    mark {
+      font-size: 60px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    &:not(:last-child) {
+      margin-bottom: 31px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.139, 1.073);
+    background-color: $activeCardColor;
+    color: $white;
+
+    .item-pricing {
+      &__cost {
+        color: $white;
+
+        > * {
+          color: $white;
+        }
+      }
+
+      &__button {
+        color: $white;
+        background-color: $activeCardBtn;
+        border: none;
+      }
+    }
+  }
+}
+
+.info {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  line-height: percentlh(50, 17);
+  letter-spacing: -0.531474px;
+}
+/* Pricing section styles end */
+
+/* Page styles end */

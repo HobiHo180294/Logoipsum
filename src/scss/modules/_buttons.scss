@@ -6,7 +6,7 @@
 // Styles for buttons
 $btnContentList: "primaryBtn" #ff7143 #fff 60px #fff #ff7143 #ff7143,
   "homeBtn" #5454d4 #fff 60px #fff #5454d4 #5454d4,
-  "cardBtn" #fff #5454d4 108px #9f3919 #fff;
+  "cardBtn" #fff #5454d4 94px #9f3919 #fff;
 
 @each $btnName, $bgColor, $textColor, $hrPadding, $hoverbg, $hoverText,
   $hoverBorder in $btnContentList
@@ -18,7 +18,7 @@ $btnContentList: "primaryBtn" #ff7143 #fff 60px #fff #ff7143 #ff7143,
     align-items: center;
     padding: 5px $hrPadding;
     min-height: 60px;
-    line-height: (22, 17);
+    line-height: percentlh(22, 17);
     text-align: center;
     margin: 5px 0;
     background: $bgColor;
