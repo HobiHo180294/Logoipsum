@@ -35,27 +35,33 @@
               />
             </a>
 
+            <div class="header__burger">
+              <span></span>
+            </div>
+
             <nav class="header__menu menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="#!" class="menu__link">Home</a>
+                  <a href="#home" class="menu__link js-scroll">Home</a>
                 </li>
 
                 <li class="menu__item">
-                  <a href="#!" class="menu__link">Features</a>
+                  <a href="#features" class="menu__link js-scroll">Features</a>
                 </li>
 
                 <li class="menu__item">
-                  <a href="#!" class="menu__link">Pricing</a>
+                  <a href="#pricing" class="menu__link js-scroll">Pricing</a>
                 </li>
 
                 <li class="menu__item">
-                  <a href="#!" class="menu__link">Blog</a>
+                  <a href="#blog" class="menu__link js-scroll">Blog</a>
                 </li>
               </ul>
             </nav>
 
-            <a href="#!" class="header__button primaryBtn">Get Started</a>
+            <a href="#home" class="header__button primaryBtn js-scroll">
+              Get Started
+            </a>
           </div>
         </div>
       </header>
@@ -64,7 +70,7 @@
       <!-- Page start -->
       <main class="page">
         <!-- Home block start -->
-        <div class="page__home home">
+        <div class="page__home home" id="home">
           <div class="home__container">
             <div class="home__body">
               <div class="home__content">
@@ -74,8 +80,10 @@
                   and grow your subscription business end-to-end.
                 </p>
                 <div class="home__button button">
-                  <a href="#!" class="button__link homeBtn">Get Started</a>
-                  <a href="#!" class="button__icon">
+                  <a href="#blog" class="button__link homeBtn js-scroll">
+                    Get Started
+                  </a>
+                  <a href="#blog" class="button__icon js-scroll">
                     <img
                       src="img/icons/home/arrow-ico.svg"
                       alt="Get Started"
@@ -148,7 +156,7 @@
         <!-- Partners block end -->
 
         <!-- Blog section start -->
-        <section class="page__blog blog">
+        <section class="page__blog blog" id="blog">
           <div class="blog__container _container">
             <div class="blog__body">
               <div class="blog__img _ibg">
@@ -169,7 +177,9 @@
                     <br />
                     your vertical.
                   </p>
-                  <a href="#!" class="description__more">Learn more</a>
+                  <a href="#features" class="description__more js-scroll">
+                    Learn more
+                  </a>
                 </div>
               </div>
 
@@ -189,7 +199,9 @@
                     <br />
                     Getting data has never been easier.
                   </p>
-                  <a href="#!" class="description__more">Learn more</a>
+                  <a href="#features" class="description__more js-scroll">
+                    Learn more
+                  </a>
                 </div>
               </div>
             </div>
@@ -198,7 +210,7 @@
         <!-- Blog section end -->
 
         <!-- Features section start -->
-        <section class="page__features features">
+        <section class="page__features features" id="features">
           <div class="features__container _container">
             <div class="features__body">
               <div class="features__column">
@@ -260,9 +272,7 @@
         <!-- Features section end -->
 
         <!-- Pricing section start -->
-
-        <!-- Pricing section start -->
-        <section class="page__pricing pricing">
+        <section class="page__pricing pricing" id="pricing">
           <div class="pricing__container">
             <div class="pricing__header">
               <h2 class="pricing__title">
@@ -272,12 +282,12 @@
               </h2>
               <div class="pricing__slider slider">
                 <a href="#!" class="slider__yearly">Yearly</a>
-                <a href="#!" class="slider__monthly">Monthly</a>
+                <a href="#monthly" class="slider__monthly js-scroll">Monthly</a>
               </div>
             </div>
 
             <div class="pricing__body">
-              <div class="pricing__column">
+              <div class="pricing__column" id="monthly">
                 <div class="pricing__item item-pricing">
                   <div class="item-pricing__class">Starter</div>
                   <div class="item-pricing__cost"><mark>Free</mark></div>
@@ -287,7 +297,10 @@
                     <p class="info__support service">Limited Support</p>
                   </div>
 
-                  <a href="#!" class="item-pricing__button cardBtn">
+                  <a
+                    href="#home"
+                    class="item-pricing__button cardBtn js-scroll"
+                  >
                     Get Started
                   </a>
                 </div>
@@ -306,7 +319,10 @@
                     <p class="info__support service">Premium Support</p>
                   </div>
 
-                  <a href="#!" class="item-pricing__button cardBtn">
+                  <a
+                    href="#home"
+                    class="item-pricing__button cardBtn js-scroll"
+                  >
                     Get Started
                   </a>
                 </div>
@@ -325,7 +341,10 @@
                     <p class="info__support service">Premium Support</p>
                   </div>
 
-                  <a href="#!" class="item-pricing__button cardBtn">
+                  <a
+                    href="#home"
+                    class="item-pricing__button cardBtn js-scroll"
+                  >
                     Get Started
                   </a>
                 </div>
@@ -338,6 +357,7 @@
       <!-- Page end -->
     </div>
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="js/main.js"></script>
     <!-- Scripts -->
   </body>

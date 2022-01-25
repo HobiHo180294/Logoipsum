@@ -25,7 +25,9 @@ $btnContentList: "primaryBtn" #ff7143 #fff 60px #fff #ff7143 #ff7143,
     color: $textColor;
     transition: all 0.5s ease 0s;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       background-color: $hoverbg;
       color: $hoverText;
 
