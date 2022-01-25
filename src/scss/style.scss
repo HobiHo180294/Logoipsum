@@ -10,6 +10,9 @@
 // Templates
 @import "../scss/modules/templates";
 
+// Mixins
+@import "../scss/modules/mixins";
+
 // Functions
 @import "../scss/modules/functions";
 
@@ -158,7 +161,7 @@ body {
   }
 
   &__title {
-    font-size: 80px;
+    @include adaptiv-font(80, 55);
     line-height: percentlh(77, 80);
     color: $dark;
     letter-spacing: -2.50105px;
@@ -171,7 +174,7 @@ body {
   &__text {
     font-family: "Mulish", sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    @include adaptiv-font(20, 18);
     line-height: percentlh(30, 20);
     letter-spacing: -0.625263px;
 
@@ -299,17 +302,17 @@ body {
 
   &__title {
     color: $dark;
-    font-size: 50px;
     line-height: percentlh(57, 50);
     letter-spacing: -1.56316px;
+    @include adaptiv-font(50, 40);
   }
 
   &__text {
     font-family: "Mulish", sans-serif;
     font-weight: 400;
-    font-size: 20px;
     line-height: percentlh(30, 20);
     letter-spacing: -0.625263px;
+    @include adaptiv-font(20, 18);
   }
 
   &__more {
@@ -330,12 +333,13 @@ body {
   &__body {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -37px;
+    margin: 0 -37px -30px;
   }
 
   &__column {
     padding: 0 37px;
     flex: 0 1 33.333%;
+    margin: 0 0 30px 0;
   }
 }
 .item-features {
@@ -361,6 +365,7 @@ body {
     font-size: 24px;
     line-height: percentlh(36, 24);
     letter-spacing: -0.750316px;
+    // flex: 1 1 auto;
   }
 
   &__text {
@@ -391,7 +396,7 @@ body {
   }
 
   &__title {
-    font-size: 60px;
+    @include adaptiv-font(60, 50);
     line-height: percentlh(70, 60);
     letter-spacing: -1.87579px;
     color: $dark;
@@ -408,12 +413,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 0 26px;
-    margin: 0 -23px;
+    margin: 0 -23px -20px;
   }
 
   &__column {
     padding: 0 23px;
     flex: 0 1 33.333%;
+    margin: 0 0 20px 0;
   }
 }
 
@@ -507,6 +513,7 @@ body {
 
   &:hover {
     transform: scale(1.139, 1.073);
+
     background-color: $activeCardColor;
     color: $white;
 
@@ -537,3 +544,197 @@ body {
 /* Pricing section styles end */
 
 /* Page styles end */
+
+/* Media queries start */
+@media screen and (max-width: 1010px) {
+  .page {
+    &__home {
+      padding: 60px 0 50px 0;
+    }
+  }
+  .home {
+    &__container {
+      padding: 0 25px;
+    }
+
+    &__body {
+      margin-right: 0;
+      justify-content: center;
+    }
+
+    &__content {
+      flex: 0 1 auto;
+
+      &:not(:last-child) {
+        margin: 0 0 25px 0;
+      }
+    }
+
+    &__title {
+    }
+
+    &__text {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .button {
+    &__link {
+      flex: 1 1 auto;
+      margin: 15px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .page {
+    > * {
+      &:not(:first-child) {
+        padding: 30px 0;
+      }
+    }
+  }
+
+  .pricing {
+    &__column {
+      &:first-child {
+        flex: 1 1 100%;
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 50%;
+      }
+
+      &:last-child {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  .item-pricing {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  .features {
+    &__column {
+      &:first-child {
+        flex: 1 1 100%;
+      }
+
+      &:nth-child(2) {
+        flex: 1 1 50%;
+      }
+
+      &:last-child {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  .pricing {
+    &__header {
+      margin: 0 0 50px 0;
+      justify-content: center;
+    }
+
+    &__title {
+      margin: 0 0 30px 0;
+    }
+
+    &__slider {
+      flex: 0 1 100%;
+    }
+  }
+
+  .item-features {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .page {
+    &__home {
+      padding: 50px 0 20px 0;
+    }
+  }
+  .home {
+    &__content {
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .button {
+    &__icon {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .blog {
+    // &__body {
+    //   grid-template-columns: 1fr;
+    //   grid-template-rows: repeat(4, minmax(250px, 1fr));
+    //   grid-template-areas:
+    //     "stats__desc"
+    //     "stats__img"
+    //     "data__desc"
+    //     "data__img";
+    //   justify-items: center;
+    //   row-gap: 40px;
+    // }
+
+    // &__img {
+    //   &:first-child {
+    //     justify-self: inherit;
+    //   }
+    // }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page {
+    &__blog {
+      padding: 0 0 30px 0 !important;
+    }
+  }
+
+  .blog {
+    &__body {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, minmax(250px, 1fr));
+      grid-template-areas:
+        "stats__desc"
+        "stats__img"
+        "data__desc"
+        "data__img";
+      justify-items: center;
+      row-gap: 0;
+    }
+
+    &__img {
+      &:first-child {
+        justify-self: inherit;
+      }
+    }
+  }
+
+  .pricing {
+    &__column {
+      padding: 0 10px;
+    }
+  }
+}
+/* Media queries end */
