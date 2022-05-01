@@ -154,7 +154,11 @@ body {
   }
 
   &__pricing {
-    padding: 75px 0 175px 0;
+    padding: 75px 0 100px 0;
+  }
+
+  &__queue {
+    padding: 75px 0 100px 0;
   }
 }
 
@@ -573,6 +577,184 @@ body {
   letter-spacing: -0.531474px;
 }
 /* Pricing section styles end */
+
+/* Electronic queue styles start */
+.queue {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+    color: $dark;
+    line-height: percentlh(57, 50);
+    letter-spacing: -1.56316px;
+    @include adaptiv-font(50, 40);
+  }
+
+  &__text {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    line-height: percentlh(30, 20);
+    letter-spacing: -0.625263px;
+    @include adaptiv-font(20, 18);
+  }
+
+  &__form {
+    flex: 0 1 380px;
+  }
+}
+
+.form-queue {
+  &__group {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      &:nth-child(5) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__group-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__group-button {
+    margin: 0 auto;
+    border: none;
+  }
+}
+
+.field-label {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: percentlh(24, 18);
+  letter-spacing: -0.500211px;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  font-family: "Mulish", sans-serif;
+  width: 100%;
+  height: 42px;
+  border: 1px solid $contentTextColor;
+  border-radius: 8px;
+  outline: none;
+  padding: 0 24px;
+  background-color: $transparent;
+  transition: all 0.3s ease 0s;
+}
+
+// Custom Select styles
+.country-group {
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__selected {
+    background: $transparent;
+    border-radius: 8px;
+    border: 1px solid $contentTextColor;
+    position: relative;
+    order: 0;
+
+    &::after {
+      content: "";
+      background: url("/img/icons/queue/arrow-down-ico.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: 100%;
+      width: 16px;
+      right: 27px;
+      top: 14px;
+      transition: all 0.4s;
+    }
+  }
+
+  &__select-box {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+  }
+
+  &__options-container {
+    background: $transparent;
+    border: 1px solid $contentTextColor;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: $activeCardColor;
+      border-radius: 0 8px 8px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $activeCardBtn;
+      border-radius: 0 8px 8px 0;
+    }
+
+    &.active {
+      max-height: 240px;
+      opacity: 1;
+      overflow: auto;
+
+      & + .country-group__selected {
+        &::after {
+          transform: rotate(180deg);
+          top: -12px;
+        }
+      }
+    }
+  }
+
+  &__option,
+  &__selected {
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+
+  &__option {
+    &:hover {
+      background-color: $activeCardBtn;
+      color: $white;
+    }
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+}
+// Custom Select styles
+
+/* Electronic queue styles end */
 
 /* Page styles end */
 

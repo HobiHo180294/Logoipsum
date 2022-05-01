@@ -63,3 +63,25 @@ $(document).ready(function () {
   };
   scrollTo();
 })();
+
+// Custom Select
+const selected = document.querySelector(".country-group__selected");
+const optionsContainer = document.querySelector(
+  ".country-group__options-container"
+);
+
+const optionsList = document.querySelectorAll(".country-group__option");
+
+selected.addEventListener("click", () => {
+  optionsContainer.classList.toggle("active");
+});
+
+// if (optionsContainer.classList.contains("active")) {
+// }
+
+optionsList.forEach((o) => {
+  o.addEventListener("click", () => {
+    selected.innerHTML = o.querySelector(".country-group__label").innerHTML;
+    optionsContainer.classList.remove("active");
+  });
+});

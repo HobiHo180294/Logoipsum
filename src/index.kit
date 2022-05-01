@@ -40,6 +40,17 @@
     <!-- Launching CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <noscript>
+      <style>
+        /**
+        * Reinstate scrolling for non-JS clients
+        */
+        .simplebar-content-wrapper {
+          overflow: auto;
+        }
+      </style>
+    </noscript>
+
     <!-- Charset -->
     <meta charset="UTF-8" />
 
@@ -380,6 +391,236 @@
           </div>
         </section>
         <!-- Pricing section end -->
+
+        <!-- Electronic queue section start -->
+        <section class="page__queue queue">
+          <div class="queue__container _container">
+            <div class="queue__body">
+              <div class="queue__content">
+                <h2 class="queue__title">
+                  Develop your business
+                  <br />
+                  with us
+                </h2>
+                <div class="queue__text">
+                  Fill out the form and sign up with our specialists.
+                  <br />
+                  We'll find the best for you!
+                </div>
+              </div>
+
+              <form action="#" class="queue__form form-queue">
+                <fieldset class="form-queue__group">
+                  <div class="form-queue__group-input name-group">
+                    <label
+                      for="nameInput"
+                      class="name-group__label field-label"
+                    >
+                      Your name
+                    </label>
+                    <input
+                      type="text"
+                      name="customerName"
+                      id="nameInput"
+                      class="name-group__field input-field"
+                    />
+                    <!-- <div class="errors"></div> -->
+                  </div>
+                  <div class="form-queue__group-input phone-group">
+                    <label
+                      for="phoneInput"
+                      class="phone-group__label field-label"
+                    >
+                      Your phone
+                    </label>
+                    <input
+                      type="tel"
+                      name="customerPhone"
+                      data-tel-input=""
+                      maxlength="18"
+                      id="phoneInput"
+                      class="phone__field input-field"
+                    />
+                    <!-- <div class="errors"></div> -->
+                  </div>
+
+                  <div class="form-queue__group-input country-group">
+                    <h3 class="country-group__title">Your country</h3>
+
+                    <div class="country-group__select-box">
+                      <div class="country-group__options-container">
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="USA"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="USA">
+                            USA
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="China"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="China">
+                            China
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="Japan"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="Japan">
+                            Japan
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="Germany"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="Germany">
+                            Germany
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="India"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="India">
+                            India
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="UK"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="UK">
+                            Great Britain
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="France"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="France">
+                            France
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="Italy"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="Italy">
+                            Italy
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="Brazil"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="Brazil">
+                            Brazil
+                          </label>
+                        </div>
+
+                        <div class="country-group__option">
+                          <input
+                            type="radio"
+                            class="country-group__radio"
+                            id="Ukraine"
+                            name="country"
+                          />
+                          <label class="country-group__label" for="Ukraine">
+                            Ukraine
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="country-group__selected">
+                        Select your country
+                      </div>
+                      <!-- <div class="errors"></div> -->
+                    </div>
+                  </div>
+
+                  <div class="form-queue__group-input business-realm-group">
+                    <label
+                      for="realmInput"
+                      class="business-realm-group__label field-label"
+                    >
+                      Scope of your business
+                    </label>
+                    <input
+                      type="text"
+                      name="businessRealm"
+                      id="realmInput"
+                      class="business-realm-group__field input-field"
+                    />
+                    <!-- <div class="errors"></div> -->
+                  </div>
+
+                  <div class="form-queue__group-input time-group">
+                    <label
+                      for="timeInput"
+                      class="time-group__label field-label"
+                    >
+                      Favorable time to contact
+                    </label>
+                    <input
+                      type="datetime-local"
+                      name="callTime"
+                      id="timeInput"
+                      class="time-group__field input-field"
+                    />
+                    <!-- <div class="errors"></div> -->
+                  </div>
+
+                  <button
+                    class="form-queue__group-button homeBtn"
+                    type="submit"
+                  >
+                    Start your growth
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </section>
+        <!-- Electronic queue section end -->
       </main>
       <!-- Page end -->
     </div>
