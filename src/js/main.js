@@ -76,9 +76,6 @@ selected.addEventListener("click", () => {
   optionsContainer.classList.toggle("active");
 });
 
-// if (optionsContainer.classList.contains("active")) {
-// }
-
 optionsList.forEach((o) => {
   o.addEventListener("click", () => {
     selected.innerHTML = o.querySelector(".country-group__label").innerHTML;

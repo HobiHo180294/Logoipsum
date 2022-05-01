@@ -677,7 +677,7 @@ body {
 
     &::after {
       content: "";
-      background: url("/img/icons/queue/arrow-down-ico.png");
+      background: url("../img/icons/queue/arrow-down-ico.png");
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -757,6 +757,83 @@ body {
 /* Electronic queue styles end */
 
 /* Page styles end */
+
+/* Footer styles start */
+.footer {
+  padding: 75px 0 75px 0;
+  background-color: $dark;
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__column {
+    padding: 20px 15px;
+    flex: 0 1 33.333%;
+  }
+
+  &__label {
+    color: $white;
+    font-size: 20px;
+    line-height: percentlh(24, 16);
+    margin-bottom: 20px;
+    letter-spacing: 0.1px;
+  }
+}
+
+.menu-footer {
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    color: $white;
+  }
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    padding-left: 34px;
+    display: flex;
+    align-items: center;
+    color: $white;
+    min-height: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:hover {
+      &:not(.contacts-footer__item_address) {
+        text-decoration: underline;
+      }
+    }
+
+    &_phone {
+      background: url(../img/icons/footer/phone-ico.png) 0 0 no-repeat;
+    }
+
+    &_address {
+      background: url(../img/icons/footer/map-ico.png) 0 0 no-repeat;
+    }
+
+    &_email {
+      background: url(../img/icons/footer/email-ico.png) 0 0 no-repeat;
+    }
+  }
+}
+/* Footer styles end */
 
 /* Media queries start */
 @media screen and (max-width: 1010px) {
