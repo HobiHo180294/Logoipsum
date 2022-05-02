@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var scrollTo = function scrollTo() {
     var links = document.querySelectorAll(".js-scroll");
     links.forEach(function (each) {
-      return each.addEventListener("click", function () {
-        var currentTarget = this.getAttribute("href");
+      return each.addEventListener("click", function (e) {
+        var currentTarget = e.target.getAttribute("href");
         smoothScroll(currentTarget, 1000);
       });
     });

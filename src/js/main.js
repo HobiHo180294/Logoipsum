@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollTo = () => {
     const links = document.querySelectorAll(".js-scroll");
     links.forEach((each) =>
-      each.addEventListener("click", function () {
-        const currentTarget = this.getAttribute("href");
+      each.addEventListener("click", (e) => {
+        const currentTarget = e.target.getAttribute("href");
         smoothScroll(currentTarget, 1000);
       })
     );
