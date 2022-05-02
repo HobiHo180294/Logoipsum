@@ -44,7 +44,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 999;
-  padding: 25px 0;
+  padding: 15px 0;
 
   &__body {
     display: flex;
@@ -786,7 +786,7 @@ body {
 .menu-footer {
   &__item {
     &:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
     color: $white;
@@ -809,6 +809,7 @@ body {
     align-items: center;
     color: $white;
     min-height: 24px;
+    text-align: left;
 
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -884,6 +885,16 @@ body {
     }
   }
 
+  .header {
+    &__menu {
+      margin-left: auto;
+    }
+
+    &__button {
+      margin-left: auto;
+    }
+  }
+
   .pricing {
     &__column {
       &:first-child {
@@ -897,6 +908,21 @@ body {
       &:last-child {
         flex: 1 1 50%;
       }
+    }
+
+    &__header {
+      margin: 0 0 50px 0;
+      justify-content: center;
+    }
+
+    &__title {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__slider {
+      flex: 0 1 100%;
     }
   }
 
@@ -924,26 +950,40 @@ body {
     }
   }
 
-  .pricing {
-    &__header {
-      margin: 0 0 50px 0;
-      justify-content: center;
-    }
-
-    &__title {
-      margin: 0 0 30px 0;
-    }
-
-    &__slider {
-      flex: 0 1 100%;
-    }
-  }
-
   .item-features {
     > * {
       &:not(:last-child) {
         margin-bottom: 5px;
       }
+    }
+  }
+
+  .queue {
+    &__content {
+      text-align: center;
+      margin: 0 auto;
+
+      > * {
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__form {
+      flex: 0 1 100%;
+    }
+  }
+
+  .footer {
+    padding: 30px 0;
+
+    &__label {
+      margin-bottom: 20px;
     }
   }
 }
@@ -1084,6 +1124,12 @@ body {
       }
     }
 
+    &__title {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
     &__img {
       display: none;
     }
@@ -1092,6 +1138,66 @@ body {
   .button {
     &__icon {
       margin: 0 0 0 10px;
+    }
+  }
+
+  .description {
+    &__body {
+      > * {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    // &__title {
+    //   &:not(:last-child) {
+    //     margin-bottom: 20px;
+    //   }
+    // }
+  }
+
+  .pricing {
+    &__title {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .queue {
+    &__content {
+      text-align: center;
+      margin: 0 auto;
+
+      > * {
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .footer {
+    &__column {
+      text-align: center;
+
+      &:not(:last-child) {
+        flex: 0 1 50%;
+      }
+
+      &:last-child {
+        flex: 0 1 100%;
+      }
+    }
+
+    &__contacts {
+      > * {
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -1126,6 +1232,22 @@ body {
   .pricing {
     &__column {
       padding: 0 10px;
+    }
+  }
+
+  .footer {
+    &__column {
+      text-align: left;
+
+      &:not(:last-child) {
+        flex: 0 1 100%;
+      }
+    }
+
+    &__contacts {
+      > * {
+        margin: 0;
+      }
     }
   }
 }
