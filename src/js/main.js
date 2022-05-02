@@ -1,48 +1,72 @@
 // Sticky header
-(function () {
+(() => {
   const header = document.querySelector(".header");
-  window.onscroll = () => {
+
+  window.addEventListener("scroll", () => {
     if (window.pageYOffset > 50) {
       header.classList.add("header_active");
     } else {
       header.classList.remove("header_active");
     }
-  };
+  });
 })();
+// Sticky header
 
-// Burger handler
-$(document).ready(function () {
-  $(".header__burger").click(function (event) {
-    $(".header__burger, .menu, .header__button").toggleClass("active");
-    $("body").toggleClass("lock");
-  });
-});
+document.addEventListener("DOMContentLoaded", () => {
+  "use strict";
 
-// Closing burger menu by clicking on the links
-$(document).ready(function () {
-  $(".menu__link, .header__button").click(function (event) {
-    $(".header__burger, .menu, .header__button").toggleClass("active");
-    $("body").toggleClass("lock");
-  });
-});
+  // Burger Elems
+  const burgerMenu = document.querySelector(".header__burger");
+  const navMenu = document.querySelector(".menu");
+  const getStartedHeaderButton = document.querySelector(".header__button");
+  const navMenuLinks = document.querySelectorAll(".menu__link");
 
-// Smooth scrolling to anchors
-(function () {
-  const smoothScroll = function (targetEl, duration) {
+  const burgerElems = [burgerMenu, navMenu, getStartedHeaderButton];
+  // Burger Elems
+
+  // Select Elems
+  const selected = document.querySelector(".country-group__selected");
+  const optionsContainer = document.querySelector(
+    ".country-group__options-container"
+  );
+  const optionsList = document.querySelectorAll(".country-group__option");
+  // Select Elems
+
+  const classToggler = (elems, className) =>
+    elems.forEach((element) => element.classList.toggle(className));
+
+  // Burger Handler
+  const burgerHandler = () => {
+    classToggler(burgerElems, "active");
+    document.body.classList.toggle("lock");
+  };
+  // Burger Handler
+
+  // Burger Handler
+  burgerMenu.addEventListener("click", burgerHandler);
+  // Burger Handler
+
+  // Closing burger menu by clicking on the links
+  getStartedHeaderButton.addEventListener("click", burgerHandler);
+  navMenuLinks.forEach((link) => link.addEventListener("click", burgerHandler));
+  // Closing burger menu by clicking on the links
+
+  // Smooth scrolling to anchors
+  const smoothScroll = (targetEl, duration) => {
     const headerElHeight = document.querySelector(".header").clientHeight;
     let target = document.querySelector(targetEl);
     let targetPosition = target.getBoundingClientRect().top - headerElHeight;
     let startPosition = window.pageYOffset;
     let startTime = null;
 
-    const ease = function (t, b, c, d) {
+    const ease = (t, b, c, d) => {
       t /= d / 2;
       if (t < 1) return (c / 2) * t * t + b;
       t--;
       return (-c / 2) * (t * (t - 2) - 1) + b;
     };
 
-    const animation = function (currentTime) {
+    const animation = (currentTime) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
       const run = ease(timeElapsed, startPosition, targetPosition, duration);
@@ -52,33 +76,28 @@ $(document).ready(function () {
     requestAnimationFrame(animation);
   };
 
-  const scrollTo = function () {
+  const scrollTo = () => {
     const links = document.querySelectorAll(".js-scroll");
-    links.forEach((each) => {
+    links.forEach((each) =>
       each.addEventListener("click", function () {
         const currentTarget = this.getAttribute("href");
         smoothScroll(currentTarget, 1000);
-      });
-    });
+      })
+    );
   };
   scrollTo();
-})();
+  // Smooth scrolling to anchors
 
-// Custom Select
-const selected = document.querySelector(".country-group__selected");
-const optionsContainer = document.querySelector(
-  ".country-group__options-container"
-);
+  // Custom Select Realization
+  selected.addEventListener("click", () =>
+    optionsContainer.classList.toggle("active")
+  );
 
-const optionsList = document.querySelectorAll(".country-group__option");
-
-selected.addEventListener("click", () => {
-  optionsContainer.classList.toggle("active");
-});
-
-optionsList.forEach((o) => {
-  o.addEventListener("click", () => {
-    selected.innerHTML = o.querySelector(".country-group__label").innerHTML;
-    optionsContainer.classList.remove("active");
-  });
+  optionsList.forEach((o) =>
+    o.addEventListener("click", () => {
+      selected.innerHTML = o.querySelector(".country-group__label").innerHTML;
+      optionsContainer.classList.remove("active");
+    })
+  );
+  // Custom Select Realization
 });
