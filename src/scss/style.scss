@@ -660,6 +660,12 @@ body {
   transition: all 0.3s ease 0s;
 }
 
+.time-group {
+  &__field {
+    cursor: pointer;
+  }
+}
+
 // Custom Select styles
 .country-group {
   &__title {
