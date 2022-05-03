@@ -1,26 +1,29 @@
 "use strict";
 
-// Sticky header
-(function () {
-  var header = document.querySelector(".header");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      header.classList.add("header_active");
-    } else {
-      header.classList.remove("header_active");
-    }
-  });
-})(); // Sticky header
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  "use strict"; // Burger Elems
+  "use strict"; // Sticky Header
+
+  var header = document.querySelector(".header"); // Sticky Header
+  // Burger Elems
 
   var burgerMenu = document.querySelector(".header__burger");
   var navMenu = document.querySelector(".menu");
   var getStartedHeaderButton = document.querySelector(".header__button");
   var navMenuLinks = document.querySelectorAll(".menu__link");
   var burgerElems = [burgerMenu, navMenu, getStartedHeaderButton]; // Burger Elems
+  // Sticky Header
+
+  if (window.scrollY > 50) {
+    header.classList.add("header_active");
+  }
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      header.classList.add("header_active");
+    } else {
+      header.classList.remove("header_active");
+    }
+  }); // Sticky Header
   // Select Elems
 
   var selected = document.querySelector(".country-group__selected");

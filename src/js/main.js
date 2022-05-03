@@ -1,19 +1,9 @@
-// Sticky header
-(() => {
-  const header = document.querySelector(".header");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("header_active");
-    } else {
-      header.classList.remove("header_active");
-    }
-  });
-})();
-// Sticky header
-
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
+
+  // Sticky Header
+  const header = document.querySelector(".header");
+  // Sticky Header
 
   // Burger Elems
   const burgerMenu = document.querySelector(".header__burger");
@@ -23,6 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const burgerElems = [burgerMenu, navMenu, getStartedHeaderButton];
   // Burger Elems
+
+  // Sticky Header
+  if (window.scrollY > 50) {
+    header.classList.add("header_active");
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("header_active");
+    } else {
+      header.classList.remove("header_active");
+    }
+  });
+  // Sticky Header
 
   // Select Elems
   const selected = document.querySelector(".country-group__selected");
