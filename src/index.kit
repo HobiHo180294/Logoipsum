@@ -38,6 +38,10 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Launching CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Charset -->
@@ -415,6 +419,7 @@
                       type="text"
                       name="customerName"
                       id="nameInput"
+                      required
                       class="name-group__field input-field"
                     />
                     <!-- <div class="errors"></div> -->
@@ -431,6 +436,7 @@
                       name="customerPhone"
                       data-tel-input=""
                       maxlength="18"
+                      required
                       id="phoneInput"
                       class="phone__field input-field"
                     />
@@ -441,7 +447,11 @@
                     <h3 class="country-group__title">Your country</h3>
 
                     <div class="country-group__select-box">
-                      <div class="country-group__options-container">
+                      <div
+                        class="country-group__options-container"
+                        data-simplebar
+                        data-simplebar-auto-hide="false"
+                      >
                         <div class="country-group__option">
                           <input
                             type="radio"
@@ -580,6 +590,7 @@
                     <input
                       type="text"
                       name="businessRealm"
+                      required
                       id="realmInput"
                       class="business-realm-group__field input-field"
                     />
@@ -699,6 +710,7 @@
       <!-- Footer end -->
     </div>
     <!-- Scripts -->
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="js/main.js"></script>
     <!-- Scripts -->
   </body>

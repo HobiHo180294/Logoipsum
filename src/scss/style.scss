@@ -37,6 +37,21 @@ body {
   @extend %ibg;
 }
 
+.simplebar-scrollbar {
+  background-color: $activeCardColor;
+  border-radius: 0 8px 8px 0;
+
+  &::before {
+    background-color: $activeCardColor;
+  }
+}
+
+.simplebar-track {
+  width: 8px !important;
+  background-color: $activeCardBtn;
+  border-radius: 0 8px 8px 0;
+}
+
 /* Header styles start */
 .header {
   position: fixed;
@@ -709,18 +724,12 @@ body {
     opacity: 0;
     transition: all 0.4s;
     border-radius: 8px;
-    overflow: hidden;
+    overflow-y: scroll;
     order: 1;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
-      width: 8px;
-      background-color: $activeCardColor;
-      border-radius: 0 8px 8px 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: $activeCardBtn;
-      border-radius: 0 8px 8px 0;
+      display: none;
     }
 
     &.active {
