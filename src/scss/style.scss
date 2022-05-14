@@ -1,3 +1,6 @@
+/* Libraries */
+@import "~simplebar/dist/simplebar.css";
+
 // Modules
 @import "@/scss/modules/reset";
 
@@ -1149,9 +1152,6 @@ body {
 
     &__img {
       display: none;
-    }
-
-    &__img-pic {
     }
   }
 
