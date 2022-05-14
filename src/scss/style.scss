@@ -1,23 +1,23 @@
 // Modules
-@use "../scss/modules/reset" as reset;
+@import "@/scss/modules/reset";
 
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Mulish&family=Roboto&display=swap");
 
 // Palette
-@import "../scss/modules/palette";
+@import "@/scss/modules/palette";
 
 // Templates
-@import "../scss/modules/templates";
+@import "@/scss/modules/templates";
 
 // Mixins
-@import "../scss/modules/mixins";
+@import "@/scss/modules/mixins";
 
 // Functions
-@import "../scss/modules/functions";
+@import "@/scss/modules/functions";
 
 // Styles for buttons
-@import "../scss/modules/buttons";
+@import "@/scss/modules/buttons";
 
 /* Presets and common styles*/
 body {
@@ -698,7 +698,7 @@ body {
 
     &::after {
       content: "";
-      background: url("../img/icons/queue/arrow-down-ico.png");
+      background: url("@assets/img/css-backgrounds/queue/arrow-down-ico.png");
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -836,15 +836,18 @@ body {
     }
 
     &_phone {
-      background: url(../img/icons/footer/phone-ico.png) 0 0 no-repeat;
+      background: url(@assets/img/css-backgrounds/footer/phone-ico.png) 0 0
+        no-repeat;
     }
 
     &_address {
-      background: url(../img/icons/footer/map-ico.png) 0 0 no-repeat;
+      background: url(@assets/img/css-backgrounds/footer/map-ico.png) 0 0
+        no-repeat;
     }
 
     &_email {
-      background: url(../img/icons/footer/email-ico.png) 0 0 no-repeat;
+      background: url(@assets/img/css-backgrounds/footer/email-ico.png) 0 0
+        no-repeat;
     }
   }
 }
@@ -1146,6 +1149,9 @@ body {
 
     &__img {
       display: none;
+    }
+
+    &__img-pic {
     }
   }
 
