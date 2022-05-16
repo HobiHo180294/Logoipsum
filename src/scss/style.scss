@@ -40,6 +40,10 @@ body {
   @extend %ibg;
 }
 
+.js-input {
+  @extend %js-input;
+}
+
 .simplebar-scrollbar {
   background-color: $activeCardColor;
   border-radius: 0 8px 8px 0;
@@ -655,6 +659,15 @@ body {
     margin: 0 auto;
     border: none;
   }
+
+  &__errors {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: percentlh(24, 18);
+    letter-spacing: -0.500211px;
+    font-weight: 700;
+    color: $activeCardColor;
+  }
 }
 
 .field-label {
@@ -710,6 +723,10 @@ body {
       right: 27px;
       top: 14px;
       transition: all 0.4s;
+    }
+
+    &.error {
+      border-color: $activeCardColor;
     }
   }
 
@@ -1169,11 +1186,6 @@ body {
         }
       }
     }
-    // &__title {
-    //   &:not(:last-child) {
-    //     margin-bottom: 20px;
-    //   }
-    // }
   }
 
   .pricing {

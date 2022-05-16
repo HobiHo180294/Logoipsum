@@ -139,7 +139,7 @@ export default {
   devtool: isDev ? "source-map" : "eval",
 
   devServer: {
-    port: 4800,
+    port: 4900,
     hot: isDev,
     open: true,
   },

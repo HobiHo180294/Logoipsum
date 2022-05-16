@@ -404,7 +404,7 @@
                 </div>
               </div>
 
-              <form action="#" class="queue__form form-queue">
+              <form action="#" class="queue__form form-queue" novalidate>
                 <fieldset class="form-queue__group">
                   <div class="form-queue__group-input name-group">
                     <label
@@ -418,9 +418,9 @@
                       name="customerName"
                       id="nameInput"
                       required
-                      class="name-group__field input-field"
+                      class="name-group__field input-field js-input"
                     />
-                    <!-- <div class="errors"></div> -->
+                    <div class="form-queue__errors"></div>
                   </div>
                   <div class="form-queue__group-input phone-group">
                     <label
@@ -436,9 +436,9 @@
                       maxlength="18"
                       required
                       id="phoneInput"
-                      class="phone__field input-field"
+                      class="phone__field input-field js-input"
                     />
-                    <!-- <div class="errors"></div> -->
+                    <div class="form-queue__errors"></div>
                   </div>
 
                   <div class="form-queue__group-input country-group">
@@ -455,6 +455,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="USA"
+                            value="USA"
                             name="country"
                           />
                           <label class="country-group__label" for="USA">
@@ -467,6 +468,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="China"
+                            value="China"
                             name="country"
                           />
                           <label class="country-group__label" for="China">
@@ -480,6 +482,7 @@
                             class="country-group__radio"
                             id="Japan"
                             name="country"
+                            value="Japan"
                           />
                           <label class="country-group__label" for="Japan">
                             Japan
@@ -491,6 +494,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="Germany"
+                            value="Germany"
                             name="country"
                           />
                           <label class="country-group__label" for="Germany">
@@ -503,6 +507,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="India"
+                            value="India"
                             name="country"
                           />
                           <label class="country-group__label" for="India">
@@ -515,6 +520,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="UK"
+                            value="UK"
                             name="country"
                           />
                           <label class="country-group__label" for="UK">
@@ -527,6 +533,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="France"
+                            value="France"
                             name="country"
                           />
                           <label class="country-group__label" for="France">
@@ -539,6 +546,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="Italy"
+                            value="Italy"
                             name="country"
                           />
                           <label class="country-group__label" for="Italy">
@@ -551,6 +559,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="Brazil"
+                            value="Brazil"
                             name="country"
                           />
                           <label class="country-group__label" for="Brazil">
@@ -563,6 +572,7 @@
                             type="radio"
                             class="country-group__radio"
                             id="Ukraine"
+                            value="Ukraine"
                             name="country"
                           />
                           <label class="country-group__label" for="Ukraine">
@@ -574,7 +584,8 @@
                       <div class="country-group__selected">
                         Select your country
                       </div>
-                      <!-- <div class="errors"></div> -->
+
+                      <div class="form-queue__errors"></div>
                     </div>
                   </div>
 
@@ -588,7 +599,6 @@
                     <input
                       type="text"
                       name="businessRealm"
-                      required
                       id="realmInput"
                       class="business-realm-group__field input-field"
                     />
@@ -625,8 +635,6 @@
         <!-- Electronic queue section end -->
       </main>
       <!-- Page end -->
-
-      <div class="block">Hello!!!</div>
 
       <!-- Footer start -->
       <footer class="footer">

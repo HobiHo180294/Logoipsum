@@ -5,7 +5,6 @@ import SimpleBar from "simplebar";
 
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
-
   // Sticky Header
   const header = document.querySelector(".header");
   // Sticky Header
@@ -18,6 +17,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const burgerElems = [burgerMenu, navMenu, getStartedHeaderButton];
   // Burger Elems
+
+  // Select Elems
+  const selected = document.querySelector(".country-group__selected");
+  const optionsContainer = document.querySelector(
+    ".country-group__options-container"
+  );
+  const optionsList = document.querySelectorAll(".country-group__option");
+  const selectedTextContent = selected.textContent;
+  // Select Elems
+
+  // Form Validation
+  const form = document.querySelector(".form-queue");
+  const requiredInputs = document.querySelectorAll(".js-input");
+
+  const inputName = document.querySelector(".name-group__field");
+  const inputPhone = document.querySelector(".phone__field");
+  const countryRadioBtns = document.getElementsByName("country");
+
+  const validateName = (name) => {
+    const regExpName = /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u;
+    return regExpName.test(String(name));
+  };
+
+  const validatePhone = (phone) => {
+    const regExpPhone = /^\+?[0-9]{2,3}-?[0-9]{6,12}$/;
+    return regExpPhone.test(String(phone));
+  };
+  // Form Validation
+
+  // -------------------------------------------------------------------
 
   // Sticky Header
   if (window.scrollY > 50) {
@@ -33,22 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // Sticky Header
 
-  // Select Elems
-  const selected = document.querySelector(".country-group__selected");
-  const optionsContainer = document.querySelector(
-    ".country-group__options-container"
-  );
-  const optionsList = document.querySelectorAll(".country-group__option");
-  // Select Elems
-
   // Burger Handler
   const burgerHandler = () => {
     classToggler(burgerElems, "active");
     document.body.classList.toggle("lock");
   };
-  // Burger Handler
 
-  // Burger Handler
   burgerMenu.addEventListener("click", burgerHandler);
   // Burger Handler
 
@@ -82,4 +101,68 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   );
   // Custom Select Realization
+
+  // Form Validation
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nameVal = inputName.value;
+    const phoneVal = inputPhone.value;
+
+    const emptyInputs = Array.from(requiredInputs).filter(
+      (input) => input.value === ""
+    );
+
+    requiredInputs.forEach((input) => {
+      if (input.value === "") {
+        input.classList.add("error");
+        input.nextElementSibling.textContent =
+          "Please, fill the required field!";
+      } else {
+        input.classList.remove("error");
+        input.nextElementSibling.textContent = "";
+      }
+    });
+
+    if (!validateName(nameVal)) {
+      inputName.classList.add("error");
+      inputName.nextElementSibling.textContent = "Please enter a valid name";
+    } else {
+      inputName.classList.remove("error");
+      inputName.nextElementSibling.textContent = "";
+    }
+
+    if (!validatePhone(phoneVal)) {
+      inputPhone.classList.add("error");
+      inputPhone.nextElementSibling.textContent = "Please enter a valid phone";
+    } else {
+      inputPhone.classList.remove("error");
+      inputPhone.nextElementSibling.textContent = "";
+    }
+
+    if (selected.textContent === selectedTextContent) {
+      selected.classList.add("error");
+      selected.nextElementSibling.textContent = "Please select your country";
+    }
+
+    for (let i = 0; i < countryRadioBtns.length; i++) {
+      if (countryRadioBtns[i].type === "radio" && countryRadioBtns[i].checked) {
+        if (selected.classList.contains("error")) {
+          selected.nextElementSibling.textContent = "";
+          selected.classList.remove("error");
+        }
+      }
+    }
+
+    if (
+      emptyInputs.length === 0 &&
+      validateName(nameVal) &&
+      validatePhone(phoneVal) &&
+      !selected.classList.contains("error")
+    ) {
+      form.submit();
+      form.reset();
+    }
+  });
+  // Form Validation
 });
