@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       form.submit();
       form.reset();
+      alert("Please wait...");
     }
   });
   // Form Validation

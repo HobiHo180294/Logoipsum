@@ -404,7 +404,12 @@
                 </div>
               </div>
 
-              <form action="#" class="queue__form form-queue" novalidate>
+              <form
+                action="./php/action.php"
+                method="post"
+                class="queue__form form-queue"
+                novalidate
+              >
                 <fieldset class="form-queue__group">
                   <div class="form-queue__group-input name-group">
                     <label
@@ -602,7 +607,6 @@
                       id="realmInput"
                       class="business-realm-group__field input-field"
                     />
-                    <!-- <div class="errors"></div> -->
                   </div>
 
                   <div class="form-queue__group-input time-group">
@@ -618,7 +622,6 @@
                       id="timeInput"
                       class="time-group__field input-field"
                     />
-                    <!-- <div class="errors"></div> -->
                   </div>
 
                   <button

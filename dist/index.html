@@ -27,7 +27,7 @@
     <!-- Adaptive meta tegs -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-  <script defer="defer" src="runtime.js"></script><script defer="defer" src="vendors-node_modules_babel_polyfill_lib_index_js-node_modules_simplebar_dist_simplebar_esm_js.js"></script><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+  <script defer="defer" src="runtime.js"></script><script defer="defer" src="vendors-node_modules_babel_polyfill_lib_index_js.js"></script><script defer="defer" src="vendors-node_modules_simplebar_dist_simplebar_esm_js.js"></script><script defer="defer" src="main.js"></script><link href="main.css" rel="stylesheet"></head>
   <!-- Body-->
   <body>
     <div class="wrapper">
@@ -322,7 +322,7 @@
                 </div>
               </div>
 
-              <form action="#" class="queue__form form-queue" novalidate>
+              <form action="./php/action.php" method="post" class="queue__form form-queue" novalidate>
                 <fieldset class="form-queue__group">
                   <div class="form-queue__group-input name-group">
                     <label for="nameInput" class="name-group__label field-label">
@@ -428,7 +428,6 @@
                       Scope of your business
                     </label>
                     <input type="text" name="businessRealm" id="realmInput" class="business-realm-group__field input-field">
-                    <!-- <div class="errors"></div> -->
                   </div>
 
                   <div class="form-queue__group-input time-group">
@@ -436,7 +435,6 @@
                       Favorable time to contact
                     </label>
                     <input type="datetime-local" name="callTime" id="timeInput" class="time-group__field input-field">
-                    <!-- <div class="errors"></div> -->
                   </div>
 
                   <button class="form-queue__group-button homeBtn" type="submit">

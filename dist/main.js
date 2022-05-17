@@ -185,9 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (emptyInputs.length === 0 && validateName(nameVal) && validatePhone(phoneVal) && !selected.classList.contains("error")) {
-      alert("We'll call you");
       form.submit();
       form.reset();
+      alert("Please wait...");
     }
   }); // Form Validation
 });
@@ -236,7 +236,7 @@ var smoothScroll = function smoothScroll(targetEl, duration) {
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors-node_modules_babel_polyfill_lib_index_js-node_modules_simplebar_dist_simplebar_esm_js"], () => (__webpack_exec__("../node_modules/@babel/polyfill/lib/index.js"), __webpack_exec__("./js/main.mjs")));
+/******/ __webpack_require__.O(0, ["vendors-node_modules_babel_polyfill_lib_index_js","vendors-node_modules_simplebar_dist_simplebar_esm_js"], () => (__webpack_exec__("../node_modules/@babel/polyfill/lib/index.js"), __webpack_exec__("./js/main.mjs")));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

@@ -1,0 +1,105 @@
+// Modules
+@import "@/scss/modules/reset";
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Mulish&family=Roboto&display=swap");
+
+// Palette
+@import "@/scss/modules/palette";
+
+// Templates
+@import "@/scss/modules/templates";
+
+// Mixins
+@import "@/scss/modules/mixins";
+
+// Functions
+@import "@/scss/modules/functions";
+
+// Styles for buttons
+@import "@/scss/modules/buttons";
+
+/* Presets and common styles*/
+body {
+  @extend %basicTextParameters;
+  background-color: $white;
+}
+
+.wrapper {
+  @extend %wrapper;
+  justify-content: center;
+  align-items: center;
+}
+
+._container {
+  @extend %container;
+}
+
+._ibg {
+  @extend %ibg;
+}
+
+.js-input {
+  @extend %js-input;
+}
+
+.page {
+  &__auth {
+    padding: 20px 0;
+  }
+}
+.auth {
+  &__title {
+    color: $dark;
+    text-align: center;
+    line-height: percentlh(47, 40);
+    letter-spacing: -1.56316px;
+    @include adaptiv-font(40, 30);
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    margin: 0 auto;
+
+    max-width: 400px;
+  }
+}
+
+.form-auth {
+  &__group {
+    > * {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__group-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__errors {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: percentlh(24, 18);
+    letter-spacing: -0.500211px;
+    font-weight: 700;
+    color: $activeCardColor;
+  }
+
+  &__group-button {
+    margin: 0 auto;
+    border: none;
+  }
+}
+
+.field-label {
+  @extend %field-label;
+}
+
+.input-field {
+  @extend %input-field;
+}

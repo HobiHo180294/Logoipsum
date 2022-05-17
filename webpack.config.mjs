@@ -77,6 +77,15 @@ const plugins = () => {
       minify: {
         collapseWhitespace: isProd,
       },
+      chunks: ["main"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./service.html",
+      filename: "service.html",
+      minify: {
+        collapseWhitespace: isProd,
+      },
+      chunks: ["service"],
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -100,6 +109,10 @@ const plugins = () => {
           from: path.resolve(__dirname, "src/assets/img/logos"),
           to: path.resolve(__dirname, "dist/assets/img/logos"),
         },
+        {
+          from: path.resolve(__dirname, "src/php"),
+          to: path.resolve(__dirname, "dist/php"),
+        },
       ],
     }),
   ];
@@ -120,6 +133,7 @@ export default {
 
   entry: {
     main: ["@babel/polyfill", "./js/main.mjs"],
+    service: ["@babel/polyfill", "./js/service.mjs"],
   },
 
   output: {
