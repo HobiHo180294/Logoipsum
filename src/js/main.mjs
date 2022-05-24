@@ -2,6 +2,7 @@ import "@/scss/style.scss";
 import smoothScroll from "./smooth-scroll.mjs";
 import classToggler from "./class-toggler.mjs";
 import SimpleBar from "simplebar";
+import IMask, { MaskElement } from "imask";
 
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
@@ -44,7 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const regExpPhone = /^\+?[0-9]{2,3}-?[0-9]{6,12}$/;
     return regExpPhone.test(String(phone));
   };
+
   // Form Validation
+
+  // Phone Mask
+  const phoneMaskOptions = {
+    mask: "",
+    lazy: false,
+  };
+
+  const phoneMask = new IMask(inputPhone, phoneMaskOptions);
+  // Phone Mask
 
   // -------------------------------------------------------------------
 
@@ -102,6 +113,75 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   // Custom Select Realization
 
+  // Phone Mask
+  countryRadioBtns.forEach((country) => {
+    country.addEventListener("click", () => {
+      if (country.type === "radio" && country.checked) {
+        if (country.value === "USA") {
+          console.log("HELLO!");
+          phoneMask.updateOptions({
+            mask: "+{1}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "China") {
+          phoneMask.updateOptions({
+            mask: "+{86}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "Japan") {
+          phoneMask.updateOptions({
+            mask: "+{81}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "Germany") {
+          phoneMask.updateOptions({
+            mask: "+{49}(000)-000-0000",
+          });
+        }
+        if (country.value === "India") {
+          phoneMask.updateOptions({
+            mask: "+{91}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "UK") {
+          phoneMask.updateOptions({
+            mask: "+{44}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "France") {
+          phoneMask.updateOptions({
+            mask: "+{33}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "Italy") {
+          phoneMask.updateOptions({
+            mask: "+{39}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "Brazil") {
+          phoneMask.updateOptions({
+            mask: "+{55}(000)-000-0000",
+          });
+        }
+
+        if (country.value === "Ukraine") {
+          phoneMask.updateOptions({
+            mask: "+{38}(000)-000-0000",
+          });
+        }
+      }
+    });
+  });
+
+  // Phone Mask
+
   // Form Validation
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -132,13 +212,13 @@ document.addEventListener("DOMContentLoaded", () => {
       inputName.nextElementSibling.textContent = "";
     }
 
-    if (!validatePhone(phoneVal)) {
-      inputPhone.classList.add("error");
-      inputPhone.nextElementSibling.textContent = "Please enter a valid phone";
-    } else {
-      inputPhone.classList.remove("error");
-      inputPhone.nextElementSibling.textContent = "";
-    }
+    // if (!validatePhone(phoneVal)) {
+    //   inputPhone.classList.add("error");
+    //   inputPhone.nextElementSibling.textContent = "Please enter a valid phone";
+    // } else {
+    //   inputPhone.classList.remove("error");
+    //   inputPhone.nextElementSibling.textContent = "";
+    // }
 
     if (selected.textContent === selectedTextContent) {
       selected.classList.add("error");
@@ -157,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (
       emptyInputs.length === 0 &&
       validateName(nameVal) &&
-      validatePhone(phoneVal) &&
       !selected.classList.contains("error")
     ) {
       form.submit();

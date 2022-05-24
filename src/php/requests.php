@@ -84,6 +84,30 @@ if (!empty($_SESSION['operator'])) {
       text-align: center;
       font-size: 25px;
     }
+
+    .log-out__btn {
+      display: block;
+      max-width: 200px;
+      cursor: pointer;
+      border-radius: 10px;
+      margin: 0 auto;
+      font-size: 18px;
+      padding: 20px 60px;
+      text-align: center;
+      border: none;
+      background-color: #5454d4;
+      color: #fff;
+      transition: all 0.5s ease 0s;
+      text-decoration: none;
+    }
+
+    .log-out__btn:hover,
+    .log-out__btn:focus,
+    .log-out__btn:active {
+      background-color: #fff;
+      color: #5454d4;
+      border: 1px solid #5454d4;
+    }
   </style>
 </head>
 
@@ -101,6 +125,7 @@ if (!empty($_SESSION['operator'])) {
               <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Phone</th>
                 <th>Country</th>
                 <th>Business Scope</th>
                 <th>Date</th>
@@ -130,6 +155,10 @@ if (!empty($_SESSION['operator'])) {
                         echo "<td class='clients__name'>" . $clients_value . "</td>";
                       };
 
+                      if ($clients_property == 'phone') {
+                        echo "<td class='clients__phone'>" . $clients_value . "</td>";
+                      };
+
                       if ($clients_property == 'country') {
                         echo "<td class='clients__country'>" . $clients_value . "</td>";
                       };
@@ -155,11 +184,12 @@ if (!empty($_SESSION['operator'])) {
               }
               ?>
             </table>
+
           </form>
-
-
-          <p class="out"></p>
         </div>
+
+        <a class="log-out__btn" href="./exit.php">Log out</a>
+
       </div>
     </main>
   </div>
@@ -183,7 +213,7 @@ if (!empty($_SESSION['operator'])) {
 
     closeBtn.forEach((btn) => {
       btn.addEventListener("click", (e) => {
-        btn.closest(".close-button__parent").previousElementSibling.previousElementSibling.firstElementChild = true;
+        btn.closest(".close-button__parent").previousElementSibling.previousElementSibling.firstElementChild.checked = true;
         btn.closest(".close-button__parent").previousElementSibling.previousElementSibling.firstElementChild.value = "CLOSED";
         btn.closest(".close-button__parent").previousElementSibling.previousElementSibling.lastElementChild.textContent = "CLOSED";
         btn.closest(".table__row").firstElementChild.firstElementChild.checked = true;
