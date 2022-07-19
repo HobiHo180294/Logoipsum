@@ -15,8 +15,5 @@ if (isset($_POST['closeBtn'])) {
 }
 
 
-echo "$request_status";
-
-mysqli_close($connect);
-
 header('Location: requests.php');
+mysqli_close($connect);
