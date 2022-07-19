@@ -120,7 +120,7 @@ if (!empty($_SESSION['operator'])) {
 
       <div class="students__container _container">
         <div class="learn-table">
-          <form action="./status.php" method="post">
+          <form action="status.php" method="post">
             <table>
               <tr>
                 <th>ID</th>
@@ -188,7 +188,7 @@ if (!empty($_SESSION['operator'])) {
           </form>
         </div>
 
-        <a class="log-out__btn" href="./exit.php">Log out</a>
+        <a class="log-out__btn" href="exit.php">Log out</a>
 
       </div>
     </main>
